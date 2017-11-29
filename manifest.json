@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube-Looper",
+  "version": "0.1",
+  "description": "This extension keeps repeating the the last song/video you played on youtube.",
+  
+  "background" : {
+    "scripts" : ["background.js"]
+  },
+  
+  "browser_action": {
+    "default_icon": "icon.png",
+	"default_title": "Click to ON/OFF"
+  },
+  "permissions": [
+        "storage"
+    ],
+	
+  "content_scripts": [
+	  {
+		"matches": [
+		  "https://www.youtube.com/*"
+		],
+		"js": ["jquery-1.11.1.min.js", "script.js"]
+	  }
+   ]
+  
+}
